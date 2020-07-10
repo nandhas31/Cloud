@@ -1,0 +1,20 @@
+{
+    "name": "cloud",
+    "version": "1.0.0",
+    "description": "A simple local cloud application that can be run on any linux machine",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "keywords": [
+        "Cloud",
+        "Linux",
+        "RaspberryPi"
+    ],
+    "author": "nandhas31",
+    "license": "ISC",
+    "dependencies": {
+        "disk-space": "^1.1.0"
+    }
+}
