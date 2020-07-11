@@ -15,6 +15,7 @@
     "author": "nandhas31",
     "license": "ISC",
     "dependencies": {
-        "disk-space": "^1.1.0"
+        "disk-space": "^1.1.0",
+        "express": "^4.17.1"
     }
 }
