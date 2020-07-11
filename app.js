@@ -1,6 +1,7 @@
  const ds = require('disk-space');
  const express = require('express');
  const ejs = require('ejs');
+ const fs = require('fs');
  const app = express();
  const formidable = require('formidable');
  app.set('view engine', 'ejs');
@@ -12,16 +13,16 @@
 
 
  app.post('/fileUpload', function(req, res){
-     let file = new formidable.IncomingForm();
-     form.parse(req, function (err, fields, files) {
-        var oldpath = files.filetoupload.path;
-        var newpath = '/usr/local/cloud/' + files.filetoupload.name;
-        fs.rename(oldpath, newpath, function (err) {
-          if (err) throw err;
-          res.write('File uploaded and moved!');
-          res.end();
-        });
- 
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+    console.log(fields)
+      var oldpath = files.testfile.path;
+      var newpath = '/usr/local/Cloud' + files.testfile.name;
+      fs.rename(oldpath, newpath, function (err) {
+        if (err) throw err;
+        res.write('File uploaded and moved!');
+        res.end();
+      });
     })
 })
 
