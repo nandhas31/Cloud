@@ -1,10 +1,11 @@
  const ds = require('disk-space');
  const express = require('express');
+ const ejs = require('ejs');
  const app = express();
-
+ app.set('view engine', 'ejs');
  app.get('/', function(req, res) {
      ds("/", function(error, data) {
-         res.end(data.usedSize + ' ' + data.totalSize) // return {usedSize : "" , totalSize : ""}  in Byte
+         res.render('main', { used: data ? data.usedSize : 'error', total: data ? data.totalSize : 'error' }); // return {usedSize : "" , totalSize : ""}  in Byte
      })
  })
 
